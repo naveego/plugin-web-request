@@ -93,7 +93,7 @@ namespace PluginWebRequest.API.Write
                 safeBody = Regex.Replace(safeBody, @"(?<!\d)\}", "}}");
                 
                 var body = string.Format(safeBody, bodyValues.ToArray());
-                var json = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8,
+                var json = new StringContent(body, Encoding.UTF8,
                     "application/json");
                 
                 HttpResponseMessage response = new HttpResponseMessage();
